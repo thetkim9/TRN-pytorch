@@ -37,7 +37,7 @@ cd opencv-$version
 [[ -d build ]] || mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_TBB=ON  -D WITH_V4L=ON ..
-echo pwd
+echo $(pwd)
 sed -i '23iset(OPENCV_VCSVERSION "2.4.13")' cmake/OpenCVPackaging.cmake
 if make -j32 ; then
     cp lib/cv2.so ../../../
