@@ -33,6 +33,7 @@ if [ ! -d "opencv-$version" ]; then
 fi
 
 echo "Building OpenCV" $version
+sed -i '23iset(OPENCV_VCSVERSION "2.4.13.5")' cmake/OpenCVPackaging.cmake
 cd opencv-$version
 [[ -d build ]] || mkdir build
 cd build
