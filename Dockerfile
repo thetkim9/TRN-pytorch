@@ -4,8 +4,12 @@ RUN apt-get install wget
 RUN mkdir TRN-pytorch
 WORKDIR TRN-pytorch
 RUN mkdir sample_data
-COPY sample_data/download_sample_data.sh sample_data
-COPY download.sh .
-RUN ./sample_data/download_sample_data.sh
-RUN ./download.sh
+
+RUN wget -P pretrain http://relation.csail.mit.edu/models/TRN_moments_RGB_InceptionV3_TRNmultiscale_segment8_best.pth.tar
+RUN wget -P pretrain http://relation.csail.mit.edu/models/TRN_moments_RGB_InceptionV3_TRNmultiscale_segment8_best_v0.4.pth.tar
+RUN wget -P pretrain http://relation.csail.mit.edu/models/moments_categories.txt
+
+RUN wget -P sample_data http://relation.csail.mit.edu/data/bolei_juggling.mp4
+RUN wget http://relation.csail.mit.edu/data/juggling.mp4
+
 CMD python test_video.py --arch InceptionV3 --dataset moments --weights pretrain/TRN_moments_RGB_InceptionV3_TRNmultiscale_segment8_best.pth.tar --frame_folder sample_data/bolei_juggling
