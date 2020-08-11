@@ -18,6 +18,7 @@ RUN apt-get install -y git
 RUN apt-get install -y sudo
 RUN apt-get install -y build-essential
 RUN apt-get install -y apt-utils
+RUN sed -i '23iset(OPENCV_VCSVERSION "2.4.13.5")' cmake/OpenCVPackaging.cmake
 COPY build_all.sh .
 RUN bash build_all.sh
 COPY . .
