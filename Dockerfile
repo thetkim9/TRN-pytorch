@@ -14,6 +14,8 @@ RUN wget http://relation.csail.mit.edu/data/juggling.mp4
 RUN apt-get install -y zip unzip
 RUN apt-get install -y cmake
 RUN apt-get install -y make
+RUN apt-get install -y git
+RUN apt-get install -y sudo
 COPY build_all.sh .
 RUN ./build_all.sh
 COPY . .
