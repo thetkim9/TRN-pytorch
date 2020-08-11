@@ -33,7 +33,10 @@ if [ ! -d "opencv-$version" ]; then
 fi
 
 echo "Building OpenCV" $version
+cd ..
+cd ..
 echo $(pwd)
+cd TRN-pytorch/3rd-party
 cd opencv-$version
 [[ -d build ]] || mkdir build
 cd build
