@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 RUN mkdir TRN-pytorch
-WORKDIR ~/TRN-pytorch
+WORKDIR TRN-pytorch
 RUN mkdir sample_data
 COPY sample_data/download_sample_data.sh sample_data
 COPY download.sh .
