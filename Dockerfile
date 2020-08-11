@@ -16,6 +16,7 @@ RUN apt-get install -y cmake
 RUN apt-get install -y make
 RUN apt-get install -y git
 RUN apt-get install -y sudo
+RUN apt-get install -y build-essential
 COPY build_all.sh .
 RUN bash build_all.sh
 COPY . .
