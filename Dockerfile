@@ -11,6 +11,9 @@ RUN wget -P pretrain http://relation.csail.mit.edu/models/moments_categories.txt
 
 RUN wget -P sample_data http://relation.csail.mit.edu/data/bolei_juggling.mp4
 RUN wget http://relation.csail.mit.edu/data/juggling.mp4
+RUN apt-get install -y zip unzip
+RUN apt-get install -y cmake
+RUN apt-get install -y make
 COPY build_all.sh .
 RUN ./build_all.sh
 COPY . .
