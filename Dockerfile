@@ -17,6 +17,6 @@ RUN apt-get install -y make
 RUN apt-get install -y git
 RUN apt-get install -y sudo
 COPY build_all.sh .
-RUN ./build_all.sh
+RUN bash build_all.sh
 COPY . .
 CMD python test_video.py --arch InceptionV3 --dataset moments --weights pretrain/TRN_moments_RGB_InceptionV3_TRNmultiscale_segment8_best.pth.tar --frame_folder sample_data/bolei_juggling
