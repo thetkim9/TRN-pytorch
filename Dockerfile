@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 RUN apt-get update
-RUN apt-get install wget
+RUN apt-get install -y wget
 RUN mkdir TRN-pytorch
 WORKDIR TRN-pytorch
 RUN mkdir sample_data
